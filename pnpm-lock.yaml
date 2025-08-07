@@ -7,6 +7,13 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@restatedev/restate-sdk':
+        specifier: '*'
+        version: 1.8.1
+      reflect-metadata:
+        specifier: '*'
+        version: 0.2.2
     devDependencies:
       '@types/node':
         specifier: ^24.2.0
@@ -33,6 +40,14 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
+
+  '@restatedev/restate-sdk-core@1.8.1':
+    resolution: {integrity: sha512-cxo8PNQu/2uIJU82Km+jq381ECcWm5EoVjkYDoQdWmPDcFwRTQoKdstKlCMmuCyI1ME4cND9/e92QXtcWBOQ5A==}
+    engines: {node: '>= 18.13'}
+
+  '@restatedev/restate-sdk@1.8.1':
+    resolution: {integrity: sha512-GebBY7cYUAyGHKeLZh3b05iP3yDefK17NcIUoHmPG+dPnU3HK6Lr/OYBVTAvzgCZUvelZ351gch4ltMRzXLi7Q==}
+    engines: {node: '>= 18.13'}
 
   '@tsconfig/node10@1.0.11':
     resolution: {integrity: sha512-DcRjDCujK/kCk/cUe8Xz8ZSpm8mS3mNNpta+jGCA6USEDfktlNvm1+IuZ9eTcDbNk41BHwpHHeW+N1lKCz4zOw==}
@@ -70,6 +85,9 @@ packages:
 
   make-error@1.3.6:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
+
+  reflect-metadata@0.2.2:
+    resolution: {integrity: sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q==}
 
   ts-node@10.9.2:
     resolution: {integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==}
@@ -115,6 +133,12 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.4
 
+  '@restatedev/restate-sdk-core@1.8.1': {}
+
+  '@restatedev/restate-sdk@1.8.1':
+    dependencies:
+      '@restatedev/restate-sdk-core': 1.8.1
+
   '@tsconfig/node10@1.0.11': {}
 
   '@tsconfig/node12@1.0.11': {}
@@ -140,6 +164,8 @@ snapshots:
   diff@4.0.2: {}
 
   make-error@1.3.6: {}
+
+  reflect-metadata@0.2.2: {}
 
   ts-node@10.9.2(@types/node@24.2.0)(typescript@5.9.2):
     dependencies:
