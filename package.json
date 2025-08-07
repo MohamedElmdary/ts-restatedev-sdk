@@ -1,0 +1,26 @@
+{
+  "name": "@ts-restatedev/sdk",
+  "version": "0.0.1",
+  "description": "Unofficial typescript SDK for restate.dev",
+  "main": "dist/index.js",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "restate",
+    "restate.dev",
+    "ts-restate",
+    "ts-restate.dev",
+    "ts-restatedev/sdk"
+  ],
+  "author": "MohamedElmdary<engm5081@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.2.0",
+    "typescript": "^5.9.2"
+  }
+}
