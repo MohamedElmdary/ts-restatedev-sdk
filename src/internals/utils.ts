@@ -2,7 +2,7 @@ import type { handlers } from "@restatedev/restate-sdk"
 import { metadata } from "./config"
 
 export interface Handler {
-  key: string
+  key: string | symbol
   options?: Parameters<typeof handlers.handler>[0]
   handler: Function
 }

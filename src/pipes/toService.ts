@@ -1,13 +1,7 @@
-import {
-  service,
-  handlers as _handlers,
-  type ServiceDefinition,
-} from "@restatedev/restate-sdk"
+import { service, handlers as _handlers } from "@restatedev/restate-sdk"
 import internals from "../internals"
 
-export function toService(ctor: {
-  new (...args: any[]): any
-}): ServiceDefinition<string, unknown> {
+export function toService<T extends { new (...args: any[]): any }>(ctor: T) {
   const serviceMetadata = Reflect.getMetadata(
     internals.config.metadata.SERVICE,
     ctor
@@ -28,8 +22,8 @@ export function toService(ctor: {
   return service({
     ...serviceMetadata,
     handlers: handlers.reduce((r, h) => {
-      r[h.key] = _handlers.handler(h.options || {}, h.handler as any)
+      r[h.key.toString()] = _handlers.handler(h.options || {}, h.handler as any)
       return r
     }, {} as { [key: string]: Function }),
-  })
+  }) as { name: string; handlers: InstanceType<T> }
 }
