@@ -1,6 +1,4 @@
-import * as restate from "@restatedev/restate-sdk"
+import "reflect-metadata"
 
-restate.service({
-  name: "test",
-  handlers: {},
-})
+export * from "./decorators"
+export * from "./pipes"
